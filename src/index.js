@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import { connectDB } from "./db/db.config.js";
-import { PORT } from "./config/env.js";
+import { PORT } from "./config/env.config.js";
 import { app } from "./app.js";
 
 dotenv.config({
@@ -10,9 +10,8 @@ dotenv.config({
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`app is listenining on ${PORT}`);
+      console.log(`app is listening on ${PORT}`);
     });
   })
   .catch((error) => {
-    console.log(`mongodb connection failed 2 `);
   });
